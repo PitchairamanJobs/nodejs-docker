@@ -19,10 +19,10 @@ pipeline{
             bat "docker login -u pitchairaman -p ${dockerPassword}"
          }
             bat 'docker push pitchairaman/nodejsapp:v1'
-      }
-          }
+       }
+    }
         
-        }
+   }
  
 
 
