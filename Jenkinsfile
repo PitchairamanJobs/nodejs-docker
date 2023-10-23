@@ -15,15 +15,16 @@ pipeline{
       }
       stage('Docker Image Push'){
       agent {label 'Node 1'}
-         withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerPassword')]) {
-            bat "docker login -u pitchairaman -p ${dockerPassword}"
+          steps{
+             withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerPassword')]) {
+             bat "docker login -u pitchairaman -p ${dockerPassword}"
          }
-            bat 'docker push pitchairaman/nodejsapp:v1'
+             bat 'docker push pitchairaman/nodejsapp:v1'
        }
     }
         
    }
- 
+} 
 
 
 
